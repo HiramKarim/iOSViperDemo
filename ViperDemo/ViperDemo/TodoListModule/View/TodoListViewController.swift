@@ -43,7 +43,12 @@ class TodoListViewController: UITableViewController {
     
     override func tableView(_ tableView:UITableView, cellForRowAt indepath: IndexPath) -> UITableViewCell {
         
-        return UITableViewCell()
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indepath)
+        let todo = todos[indepath.row]
+        cell.textLabel?.text = todo.title
+        cell.detailTextLabel?.text = todo.content
+        
+        return cell
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
