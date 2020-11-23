@@ -16,9 +16,11 @@ class TodoListRouter: TodoListRouterProtocol {
         let router = TodoListRouter()
         
         todoListVC.presenter = presenter
+        
         presenter.view = todoListVC
         presenter.interactor = interactor
         presenter.router = router
+        
         interactor.presenter = presenter
         
         return todoListVC

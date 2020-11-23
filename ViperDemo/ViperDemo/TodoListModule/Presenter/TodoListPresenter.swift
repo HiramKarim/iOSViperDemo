@@ -10,8 +10,8 @@ import Foundation
 class TodoListPresenter: TodoListPresenterProtocol {
     
     weak var view: TodoListViewProtocol?
-    weak var interactor: TodoListInteractorInputProtocol?
-    weak var router: TodoListRouterProtocol?
+    var interactor: TodoListInteractorInputProtocol?
+    var router: TodoListRouterProtocol?
     
     func viewWillAppear() {
         

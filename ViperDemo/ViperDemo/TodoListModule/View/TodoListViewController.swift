@@ -10,7 +10,7 @@ import UIKit
 
 class TodoListViewController: UITableViewController {
     
-    weak var presenter:TodoListPresenterProtocol?
+    var presenter:TodoListPresenterProtocol?
     
     var todos:[TodoItem] = [] {
         didSet {
@@ -35,6 +35,7 @@ class TodoListViewController: UITableViewController {
     
     private func setupView() {
         tableView.tableFooterView = UIView()
+        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
